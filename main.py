@@ -1,29 +1,28 @@
 # Complexity
-# O(1) < O(log (n)) < O(n) < O(n log (n)) < O(n^2) < O(2^n) < O(n!)
+# O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(2^n) < O(n!)
 
 # Amortized Runtime
 # N inserts to a resizable array require O(N) inserts. O(1) amortized runtime.
 
-# Log (n) runtimes
-# When the number of elements in the problem space gets halved each time, it has a O(log (n)) runtime.
+# log n Runtimes
+# When the number of elements in the problem space gets halved each time, it has a O(log n) runtime.
 
-# Recursive runtimes
-# time: O(branches ^ depth)
-# space: O(depth)
+# Recursive Runtimes
+# n = branches of recursion tree, m = depth of recursion tree
+# time: O(n^m)
+# space: O(m)
 
-# 2 pointer technique
-# one slow pointer and one fast pointer (usually used in linked list/array questions)
+# 2 Pointer Technique
+# one slow pointer and one fast pointer (useful in linked list or array questions)
 
 # Tree Traversal
-# in-order: left node right
-# pre-order: node left right
-# post-order: left right node
+# in-order: left -> current -> right
+# pre-order: current -> left -> right
+# post-order: left -> right -> current
 
 # Heaps
-# insert: O(log (n))
-# remove: O(log (n))
-
-from typing import List, Set, Dict
+# insert: O(log n)
+# remove: O(log n)
 
 # Stack
 stack = []
@@ -48,17 +47,19 @@ deque.pop()             # dequeue right 'b'
 deque.popleft()         # dequeue left 'a'
 
 # Binary Search
-def binarySearch(arr, x): 
+def binarySearch(arr, x):
     l, r = 0, len(arr)
-    while l <= r: 
-        mid = l + (r - l) // 2; 
-        if arr[mid] == x: 
-            return mid 
-        elif arr[mid] < x: 
+    while l <= r:
+        mid = l + (r - l) // 2;
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
             l = mid + 1
-        else: 
+        else:
             r = mid - 1
     return -1
+
+from typing import List, Set, Dict
 
 # Graphs (Adjacency List)
 class Graph:
