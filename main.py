@@ -98,3 +98,7 @@ def bfs(root: Node):
             visited.add(n)
             for child in n.children:
                 queue.append(child)
+
+if __name__ == "__main__":
+    # run algorithm of choice
+    pass
